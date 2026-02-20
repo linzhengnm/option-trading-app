@@ -16,6 +16,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@option-trading/source"]
+    "customConditions": ["@option-trading/source"],
+    "baseUrl": ".",
+    "paths": {
+      "@option-trading/ui": ["libs/ui/src/index.ts"],
+      "@option-trading/auth": ["libs/auth/src/index.ts"],
+      "@option-trading/api": ["libs/api/src/index.ts"],
+      "@option-trading/models": ["libs/models/src/index.ts"]
+    }
   }
 }

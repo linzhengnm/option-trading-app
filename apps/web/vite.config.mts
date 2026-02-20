@@ -5,6 +5,14 @@ import { reactRouter } from '@react-router/dev/vite';
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/apps/web',
+  resolve: {
+    alias: {
+      '@option-trading/ui': '../../libs/ui/src/index.ts',
+      '@option-trading/auth': '../../libs/auth/src/index.ts',
+      '@option-trading/api': '../../libs/api/src/index.ts',
+      '@option-trading/models': '../../libs/models/src/index.ts',
+    },
+  },
   server: {
     port: 4200,
     host: 'localhost',

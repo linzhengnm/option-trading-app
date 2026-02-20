@@ -7,12 +7,43 @@ import {
   type MetaFunction,
   type LinksFunction,
 } from 'react-router';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 import { AppNav } from './app-nav';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+});
+
 export const meta: MetaFunction = () => [
   {
-    title: 'New Nx React Router App',
+    title: 'Option Trading - Find the Best Time to Sell Covered Calls',
+  },
+  {
+    name: 'description',
+    content: 'AI-powered platform to find the best moment to sell covered calls on stocks you own',
+  },
+  {
+    name: 'viewport',
+    content: 'width=device-width, initial-scale=1, maximum-scale=1',
   },
 ];
 
@@ -49,5 +80,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Outlet />
+    </ThemeProvider>
+  );
 }

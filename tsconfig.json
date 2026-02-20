@@ -8,6 +8,18 @@
     },
     {
       "path": "./apps/web"
+    },
+    {
+      "path": "./libs/ui"
+    },
+    {
+      "path": "./libs/auth"
+    },
+    {
+      "path": "./libs/api"
+    },
+    {
+      "path": "./libs/models"
     }
   ]
 }
