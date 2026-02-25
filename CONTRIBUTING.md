@@ -182,21 +182,25 @@ Before merging to `main`, ensure:
 ## 🔄 If Something Goes Wrong
 
 ### Abort a merge
+
 ```bash
 git merge --abort
 ```
 
 ### Undo last commit (keep changes)
+
 ```bash
 git reset --soft HEAD~1
 ```
 
 ### Undo last commit (discard changes)
+
 ```bash
 git reset --hard HEAD~1
 ```
 
 ### Switch branches without committing
+
 ```bash
 git stash
 git checkout other-branch

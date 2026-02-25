@@ -29,7 +29,9 @@ export function App() {
 
   const handleSignIn = () => {
     // Firebase integration will go here
-    setError('Firebase needs to be configured. Set up your Firebase project and add credentials to .env file');
+    setError(
+      'Firebase needs to be configured. Set up your Firebase project and add credentials to .env file'
+    );
     setFirebaseConfigured(false);
   };
 
@@ -100,11 +102,7 @@ export function App() {
                 </Button>
               </Stack>
             ) : (
-              <Button
-                variant="contained"
-                onClick={handleSignIn}
-                sx={{ textTransform: 'none' }}
-              >
+              <Button variant="contained" onClick={handleSignIn} sx={{ textTransform: 'none' }}>
                 Sign In with Google
               </Button>
             )}
@@ -124,9 +122,15 @@ export function App() {
               ✅ Frontend: React + Vite + MUI loaded successfully
             </Typography>
           </Paper>
-          <Paper sx={{ p: 2, bgcolor:  firebaseConfigured ? '#c8e6c9' : '#fff3e0', borderRadius: 2 }}>
-            <Typography variant="body2" color={firebaseConfigured ? 'success.main' : 'warning.main'}>
-              {firebaseConfigured ? '✅' : '⚠️'} Firebase: {firebaseConfigured ? 'Configured' : 'Needs setup (.env file)'}
+          <Paper
+            sx={{ p: 2, bgcolor: firebaseConfigured ? '#c8e6c9' : '#fff3e0', borderRadius: 2 }}
+          >
+            <Typography
+              variant="body2"
+              color={firebaseConfigured ? 'success.main' : 'warning.main'}
+            >
+              {firebaseConfigured ? '✅' : '⚠️'} Firebase:{' '}
+              {firebaseConfigured ? 'Configured' : 'Needs setup (.env file)'}
             </Typography>
           </Paper>
           <Paper sx={{ p: 2, bgcolor: '#fff3e0', borderRadius: 2 }}>
@@ -250,12 +254,7 @@ export function App() {
                     </Typography>
                     <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
                       {expirations.slice(0, 10).map((exp) => (
-                        <Button
-                          key={exp}
-                          variant="outlined"
-                          size="small"
-                          sx={{ mb: 1 }}
-                        >
+                        <Button key={exp} variant="outlined" size="small" sx={{ mb: 1 }}>
                           {exp}
                         </Button>
                       ))}
@@ -275,8 +274,8 @@ export function App() {
               Enter a stock symbol to get started
             </Typography>
             <Typography variant="body2" color="textSecondary" sx={{ mt: 1 }}>
-              CoveredCall Pro helps you find the best moment to sell covered calls on stocks you own.
-              Analyze options chains for weekly and biweekly expirations.
+              CoveredCall Pro helps you find the best moment to sell covered calls on stocks you
+              own. Analyze options chains for weekly and biweekly expirations.
             </Typography>
           </Box>
         )}

@@ -20,8 +20,8 @@ export default function AboutComponent() {
                 best moment to sell covered calls on stocks they own.
               </Typography>
               <Typography variant="body1">
-                We analyze real-time market data, option chains, and volatility to provide actionable
-                insights for your covered call strategy.
+                We analyze real-time market data, option chains, and volatility to provide
+                actionable insights for your covered call strategy.
               </Typography>
             </CardContent>
           </Card>

@@ -63,8 +63,8 @@ test.describe('CoveredCall Pro - E2E Tests', () => {
   test('should navigate to About page', async ({ page }) => {
     // Look for About navigation
     const links = page.locator('button:has-text("About")');
-    
-    if (await links.count() > 0) {
+
+    if ((await links.count()) > 0) {
       await links.click();
       await page.waitForURL('**/about', { timeout: 5000 }).catch(() => {
         // About page might not exist yet, that's ok
@@ -75,7 +75,7 @@ test.describe('CoveredCall Pro - E2E Tests', () => {
   test('should display status information', async ({ page }) => {
     // Check for status messages about Firebase/Tradier
     const paperElements = page.locator('[class*="MuiPaper"]');
-    
+
     // Should have at least container elements
     const count = await paperElements.count();
     expect(count).toBeGreaterThanOrEqual(0);
@@ -84,7 +84,7 @@ test.describe('CoveredCall Pro - E2E Tests', () => {
   test('should have MUI components', async ({ page }) => {
     // Check for MUI Card components
     const cards = page.locator('[class*="MuiCard"]');
-    
+
     // Count should be a valid number
     const cardCount = await cards.count().catch(() => 0);
     expect(typeof cardCount).toBe('number');
@@ -106,7 +106,7 @@ test.describe('CoveredCall Pro - E2E Tests', () => {
   test('should display authentication UI', async ({ page }) => {
     // Look for auth-related UI (sign in button or user display)
     const buttons = page.locator('button');
-    
+
     // Should have some buttons
     const count = await buttons.count();
     expect(count).toBeGreaterThan(0);
@@ -125,11 +125,9 @@ test.describe('Page Navigation', () => {
 
   test('should handle invalid routes gracefully', async ({ page }) => {
     // Try navigating to non-existent page
-    await page.goto('/nonexistent', { waitUntil: 'networkidle' }).catch(
-      () => {
-        // 404 is expected
-      }
-    );
+    await page.goto('/nonexistent', { waitUntil: 'networkidle' }).catch(() => {
+      // 404 is expected
+    });
 
     // App should still be responsive
     const bodyContent = await page.locator('body').count();

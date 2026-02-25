@@ -14,26 +14,31 @@ A mobile-friendly web application that helps users find the best moments to sell
 ### Tech Stack
 
 **Frontend:**
+
 - React 19 + Vite for fast development
 - Material-UI (MUI) for mobile-responsive design
 - React Router for navigation
 - TypeScript for type safety
 
 **Backend:**
+
 - Firebase Cloud Functions (Node.js serverless)
 - Firestore for real-time database
 - Firebase Auth for Google login
 
 **Testing:**
+
 - Vitest for unit tests
 - Playwright for E2E tests
 
 **CI/CD & Deployment:**
+
 - GitHub Actions for automated testing and deployment
 - GitHub Pages for frontend hosting
 - Firebase for backend and database
 
 **Data Source:**
+
 - Tradier API for real-time stock and options data
 
 ### Project Structure
@@ -65,26 +70,30 @@ option-trading-app/
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone <repo-url>
    cd option-trading-app
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.local
    ```
-   
+
    Add your Firebase and Tradier API credentials:
    - Firebase: Create a project at https://console.firebase.google.com
    - Tradier: Get a free API key at https://apiforge.tradier.com
 
 4. **Start development server**
+
    ```bash
    cd apps/web && npm start
    # or
@@ -102,6 +111,7 @@ option-trading-app/
 ## 📚 Features
 
 ### Current (MVP)
+
 - ✅ Mobile-responsive UI with MUI
 - ✅ Stock quote search with real-time data
 - ✅ Display available option expirations (weekly/biweekly)
@@ -109,11 +119,13 @@ option-trading-app/
 - ✅ Clean, modern dashboard
 
 ### In Progress
+
 - 🔄 Firebase authentication (Google login)
 - 🔄 User authentication and profiles
 - 🔄 Firestore data persistence
 
 ### Planned
+
 - 📋 Covered call analysis and recommendations
 - 📊 Historical analysis and performance tracking
 - 🎯 Alert system for optimal strike/expiration combos
@@ -182,6 +194,7 @@ MIT
 ## 🆘 Troubleshooting
 
 ### Port 4200 already in use
+
 ```bash
 # Kill the process using port 4200
 lsof -ti:4200 | xargs kill -9
@@ -190,12 +203,15 @@ npx vite --port 3000
 ```
 
 ### Module resolution errors
+
 Make sure all libraries are built:
+
 ```bash
 npx nx build ui && npx nx build auth && npx nx build api && npx nx build models
 ```
 
 ### Firebase connection issues
+
 - Verify .env file has correct Firebase credentials
 - Check Firebase project has Firestore and Auth enabled
 - Ensure CORS is properly configured in Firebase
@@ -207,17 +223,20 @@ npx nx build ui && npx nx build auth && npx nx build api && npx nx build models
 ## 📅 Roadmap
 
 ### Phase 1 (Current)
+
 - [x] Project setup & scaffolding
 - [x] UI framework & components
 - [ ] Firebase integration
 - [ ] Basic API integration
 
 ### Phase 2
+
 - [ ] Covered call analysis algorithm
 - [ ] User authentication & profiles
 - [ ] Historical data storage
 
 ### Phase 3
+
 - [ ] Advanced analysis & ML recommendations
 - [ ] Mobile app
 - [ ] Trading alerts

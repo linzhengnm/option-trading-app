@@ -84,9 +84,7 @@ export const getOptionChain = async (
  * Fetch option expirations for a given symbol
  * @param symbol Stock symbol (e.g., 'AAPL')
  */
-export const getOptionExpirations = async (
-  symbol: string
-): Promise<string[]> => {
+export const getOptionExpirations = async (symbol: string): Promise<string[]> => {
   if (!TRADIER_API_KEY) {
     throw new Error('VITE_TRADIER_API_KEY environment variable is not set');
   }

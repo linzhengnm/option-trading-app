@@ -2,7 +2,11 @@
   "name": "@option-trading/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json,css,md,mdx}'"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -164,9 +164,7 @@ describe('Domain Models - Type Validation', () => {
 
       expect(profile.email).toContain('@');
       expect(profile.uid).toBeDefined();
-      expect(['low', 'medium', 'high']).toContain(
-        profile.preferences?.riskTolerance
-      );
+      expect(['low', 'medium', 'high']).toContain(profile.preferences?.riskTolerance);
     });
 
     it('should handle optional preferences', () => {

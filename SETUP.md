@@ -107,6 +107,7 @@ npm run build
 ## Features
 
 ### Current
+
 - Google OAuth login with Firebase Auth
 - User watchlist management
 - Tradier API integration for options data
@@ -114,6 +115,7 @@ npm run build
 - Mobile-friendly MUI components
 
 ### Planned
+
 - Covered call strategy recommendations
 - Weekly/biweekly option expiration filtering
 - P&L calculations

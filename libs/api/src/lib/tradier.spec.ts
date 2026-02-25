@@ -142,9 +142,7 @@ describe('Tradier API Service', () => {
 
   describe('Error handling', () => {
     it('should handle API fetch errors gracefully', async () => {
-      global.fetch = vi.fn(() =>
-        Promise.reject(new Error('Network error'))
-      );
+      global.fetch = vi.fn(() => Promise.reject(new Error('Network error')));
 
       // Verify error handling is in place
       expect(typeof getStockQuote).toBe('function');

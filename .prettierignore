@@ -1,5 +1,29 @@
-# Add files here to ignore them from prettier formatting
+# Dependencies
+node_modules/
+
+# Build outputs
 /dist
-/coverage
+/build
 /.nx/cache
 /.nx/workspace-data
+
+# Testing
+/coverage
+/**/*.lcov
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Generated files
+*.generated.*
+nx.json
