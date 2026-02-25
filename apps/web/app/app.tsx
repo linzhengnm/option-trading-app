@@ -9,19 +9,21 @@ import {
   Stack,
   TextField,
   Paper,
-  CircularProgress,
   Alert,
 } from '@mui/material';
 import { useState } from 'react';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import WarningIcon from '@mui/icons-material/Warning';
+import { Stock } from '@option-trading/models';
 
 // Simplified state management for now (Firebase will be integrated later)
 export function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [symbol, setSymbol] = useState('');
-  const [quote, setQuote] = useState<any>(null);
+  const [quote, setQuote] = useState<Stock | null>(null);
   const [expirations, setExpirations] = useState<string[]>([]);
   const [loadingData, setLoadingData] = useState(false);
   const [error, setError] = useState('');
@@ -118,25 +120,37 @@ export function App() {
         {/* Status Messages */}
         <Stack spacing={2} sx={{ mb: 3 }}>
           <Paper sx={{ p: 2, bgcolor: '#e3f2fd', borderRadius: 2 }}>
-            <Typography variant="body2" color="info.main">
-              ✅ Frontend: React + Vite + MUI loaded successfully
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <CheckCircleIcon sx={{ color: 'success.main', fontSize: 24 }} />
+              <Typography variant="body2" color="info.main">
+                Frontend: React + Vite + MUI loaded successfully
+              </Typography>
+            </Box>
           </Paper>
           <Paper
             sx={{ p: 2, bgcolor: firebaseConfigured ? '#c8e6c9' : '#fff3e0', borderRadius: 2 }}
           >
-            <Typography
-              variant="body2"
-              color={firebaseConfigured ? 'success.main' : 'warning.main'}
-            >
-              {firebaseConfigured ? '✅' : '⚠️'} Firebase:{' '}
-              {firebaseConfigured ? 'Configured' : 'Needs setup (.env file)'}
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              {firebaseConfigured ? (
+                <CheckCircleIcon sx={{ color: 'success.main', fontSize: 24 }} />
+              ) : (
+                <WarningIcon sx={{ color: 'warning.main', fontSize: 24 }} />
+              )}
+              <Typography
+                variant="body2"
+                color={firebaseConfigured ? 'success.main' : 'warning.main'}
+              >
+                Firebase: {firebaseConfigured ? 'Configured' : 'Needs setup (.env file)'}
+              </Typography>
+            </Box>
           </Paper>
           <Paper sx={{ p: 2, bgcolor: '#fff3e0', borderRadius: 2 }}>
-            <Typography variant="body2" color="warning.main">
-              ⚠️ Tradier API: Ready to integrate (add API key to .env)
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <WarningIcon sx={{ color: 'warning.main', fontSize: 24 }} />
+              <Typography variant="body2" color="warning.main">
+                Tradier API: Ready to integrate (add API key to .env)
+              </Typography>
+            </Box>
           </Paper>
         </Stack>
 

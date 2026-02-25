@@ -4,7 +4,6 @@ import {
   OptionPosition,
   Stock,
   UserProfile,
-  CoveredCallStrategy as CCS,
 } from './domain-models';
 
 describe('Domain Models - Type Validation', () => {

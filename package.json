@@ -5,7 +5,11 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "format:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json,css,md,mdx}'"
+    "format:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json,css,md,mdx}'",
+    "lint": "nx run-many --target=lint --all",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:affected": "nx affected --target=lint"
   },
   "private": true,
   "dependencies": {
