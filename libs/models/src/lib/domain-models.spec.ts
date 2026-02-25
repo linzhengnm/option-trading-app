@@ -1,10 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  CoveredCallStrategy,
-  OptionPosition,
-  Stock,
-  UserProfile,
-} from './domain-models';
+import { CoveredCallStrategy, OptionPosition, Stock, UserProfile } from './domain-models';
 
 describe('Domain Models - Type Validation', () => {
   describe('Stock', () => {

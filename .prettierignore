@@ -27,3 +27,4 @@ node_modules/
 # Generated files
 *.generated.*
 nx.json
+**/.react-router
