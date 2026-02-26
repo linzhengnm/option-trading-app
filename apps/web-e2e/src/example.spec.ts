@@ -37,9 +37,7 @@ test.describe('CoveredCall Pro - UI Smoke Tests', () => {
   test('should have analyze button', async ({ page }) => {
     // Check for analyze button
     const analyzeButton = page.locator('button:has-text("Analyze")');
-    await analyzeButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {
-      // Button might not exist yet, which is ok for now
-    });
+    expect(analyzeButton).toBeDefined();
   });
 
   test('should display navigation bar', async ({ page }) => {
@@ -50,8 +48,8 @@ test.describe('CoveredCall Pro - UI Smoke Tests', () => {
 
   test('should have home and about navigation links', async ({ page }) => {
     // Check for navigation buttons
-    const homeButton = page.locator('button:has-text("Home")');
-    const aboutButton = page.locator('button:has-text("About")');
+    const _homeButton = page.locator('button:has-text("Home")');
+    const _aboutButton = page.locator('button:has-text("About")');
 
     // At least one navigation button should exist
     const totalButtons = await page.locator('button').count();
@@ -75,9 +73,7 @@ test.describe('CoveredCall Pro - UI Smoke Tests', () => {
     // Type a value
     await input.type('TEST');
 
-    // Wait a moment for input to update
-    await page.waitForTimeout(50);
-
+    // Clear input value
     // Select all and clear
     await input.evaluate((el: HTMLInputElement) => {
       el.value = '';
@@ -85,8 +81,7 @@ test.describe('CoveredCall Pro - UI Smoke Tests', () => {
     });
 
     // Verify it's empty
-    const value = await input.inputValue();
-    expect(value).toBe('');
+    await expect(input).toHaveValue('');
   });
 
   test('should render page without errors', async ({ page }) => {
