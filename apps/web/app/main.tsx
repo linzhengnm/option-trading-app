@@ -33,8 +33,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppNav />
       <MemoryRouter>
+        <AppNav />
         <Routes>
           <Route path="/" element={<HomeApp />} />
           <Route path="/about" element={<AboutComponent />} />
