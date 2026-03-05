@@ -80,8 +80,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite build output containing index.html
-          path: './apps/web/dist'
+          # React Router client build output (no index.html yet)
+          path: './apps/web/build/client'
 
       - name: Deploy to GitHub Pages
         id: deployment
