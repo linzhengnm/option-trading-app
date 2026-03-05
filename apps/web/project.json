@@ -11,6 +11,13 @@
         "command": "npx vite build",
         "cwd": "apps/web"
       }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx vite",
+        "cwd": "apps/web"
+      }
     }
   }
 }
