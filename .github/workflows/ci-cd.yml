@@ -69,8 +69,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build application
-        run: npm run build
+      - name: Build web app (Vite SPA)
+        run: |
+          cd apps/web
+          npx vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -78,8 +80,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # React Router client build output
-          path: './apps/web/build/client'
+          # Vite build output containing index.html
+          path: './apps/web/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
