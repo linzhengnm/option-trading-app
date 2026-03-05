@@ -1,0 +1,17 @@
+{
+  "name": "@option-trading/web",
+  "projectType": "application",
+  "root": "apps/web",
+  "sourceRoot": "apps/web/app",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "options": {
+        "command": "npx vite build",
+        "cwd": "apps/web"
+      }
+    }
+  }
+}
+
